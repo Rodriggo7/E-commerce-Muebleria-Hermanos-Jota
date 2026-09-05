@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Hermanos Jota</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="index.html">
+                <h1>Hermanos Jota</h1>
+            </a>
+        </div>
+        <nav class="header__nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Catálogo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header__cart">
+            <span class="cart-icon">🛒</span>
+            <span id="cart-counter" class="cart-counter">0</span>
+        </div>
+    </header>
+
+    <main class="contacto">
+        <section class="contacto__contenedor">
+            <h2>Contáctanos</h2>
+            <p>Déjanos tu mensaje y te responderemos a la brevedad.</p>
+            
+            <!-- Contenedor para el mensaje de éxito mediante DOM -->
+            <div id="mensaje-exito" class="alert alert--success" style="display: none;">
+                ¡Tu mensaje ha sido enviado correctamente!
+            </div>
+
+            <form id="contacto-form" class="formulario" novalidate>
+                <div class="formulario__grupo">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <span class="error-msg" id="error-nombre"></span>
+                </div>
+
+                <div class="formulario__grupo">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-msg" id="error-email"></span>
+                </div>
+
+                <div class="formulario__grupo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    <span class="error-msg" id="error-mensaje"></span>
+                </div>
+
+                <button type="submit" class="btn btn--primary">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__info">
+            <p>&copy; 2026 Mueblería Hermanos Jota. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>

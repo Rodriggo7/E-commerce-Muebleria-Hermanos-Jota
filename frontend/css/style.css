@@ -1,0 +1,285 @@
+/* =========================================
+1. SISTEMA DE TEMAS Y VARIABLES (UI/UX)
+========================================= */
+:root {
+    /* Paleta extraída del Logo */
+    --primary:       #A0522D;  /* Tono madera principal (Botones, links) */
+    --primary-dark:  #713A20;  /* Tono oscuro (Hover de botones, Header) */
+    --primary-light: #C47A55;  /* Tono claro (Acentos) */
+    --cream:         #F5EDE6;  /* Fondo principal */
+    --beige:         #E6D3C3;  /* Fondos secundarios, bordes */
+    --dark:          #29211D;  /* Texto principal */
+    --white:         #FFFFFF;  /* Tarjetas, fondos de inputs */
+    
+    /* Tipografía */
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
+    /* Espaciados y Modelo de Cajas */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --border-radius: 8px;
+    --shadow: 0 4px 6px rgba(41, 33, 29, 0.08); /* Sombra suave adaptada al color dark */
+}
+
+/* =========================================
+   2. RESET Y MODELO DE CAJAS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--cream);
+    color: var(--dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =========================================
+   3. ESTRUCTURA GLOBAL (Mobile First)
+   ========================================= */
+
+/* Control de tamaño para el Logo SVG */
+.header__logo img, 
+.logo-img {
+    max-height: 90px;
+    width: auto;  
+    display: block;  
+}
+
+
+/* Header */
+.header {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.header a {
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.header a:hover {
+    color: var(--white);
+}
+
+.header__nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.header__cart {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--cream);
+}
+
+/* Main Content */
+main {
+    flex-grow: 1;
+    padding: var(--spacing-lg) var(--spacing-md);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+/* Títulos Generales */
+h2, h3 {
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Grillas Flexbox */
+.grid-container {
+    display: flex;
+    flex-direction: column; 
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+/* =========================================
+   4. TARJETAS DE PRODUCTO (Product Cards)
+   ========================================= */
+.product-card {
+    background-color: var(--white);
+    border: 1px solid var(--beige);
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Asegura que la imagen respete los bordes redondeados */
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(41, 33, 29, 0.15);
+}
+
+.product-card__img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Recorta la imagen sin deformarla para mantener la proporción */
+    border-bottom: 1px solid var(--beige);
+}
+
+.product-card__info {
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Empuja el botón hacia abajo si el título es corto */
+}
+
+.product-card__title {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--dark);
+}
+
+.product-card__price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.btn--primary {
+    background-color: var(--primary);
+    color: var(--white);
+    margin-top: auto; /* Empuja el botón al final de la tarjeta */
+}
+
+.btn--primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn--secondary {
+    background-color: var(--beige);
+    color: var(--dark);
+}
+
+.btn--secondary:hover {
+    background-color: var(--primary-light);
+    color: var(--white);
+}
+
+/* =========================================
+   5. FORMULARIO DE CONTACTO
+   ========================================= */
+.formulario {
+    background-color: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.formulario__grupo {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario label {
+    margin-bottom: var(--spacing-sm);
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.formulario input,
+.formulario textarea {
+    padding: var(--spacing-sm);
+    border: 1px solid var(--beige);
+    border-radius: 4px;
+    font-family: var(--font-main);
+    background-color: var(--cream);
+    color: var(--dark);
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: var(--white);
+}
+
+.error-msg {
+    color: #d32f2f; /* Rojo estándar para errores */
+    font-size: 0.85rem;
+    margin-top: 5px;
+    min-height: 1.2em; /* Evita que el formulario salte cuando aparece el texto */
+}
+
+.alert--success {
+    background-color: #4caf50;
+    color: white;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-dark);
+    color: var(--cream);
+    text-align: center;
+    padding: var(--spacing-md);
+    margin-top: auto;
+}
+
+/* =========================================
+   6. MEDIA QUERIES (Desktop / Tablets)
+   ========================================= */
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .grid-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Tarjetas: 2 columnas en tablet, 3 en desktop */
+    .product-card {
+        width: calc(50% - var(--spacing-lg)); 
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-card {
+        width: calc(33.333% - var(--spacing-lg)); 
+    }
+}

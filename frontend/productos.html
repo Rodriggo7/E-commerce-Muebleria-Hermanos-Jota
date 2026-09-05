@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Hermanos Jota</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="index.html">
+                <h1>Hermanos Jota</h1>
+            </a>
+        </div>
+        <nav class="header__nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Catálogo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header__cart">
+            <span class="cart-icon">🛒</span>
+            <span id="cart-counter" class="cart-counter">0</span>
+        </div>
+    </header>
+
+    <main class="catalogo">
+        <section class="catalogo__header">
+            <h2>Nuestro Catálogo</h2>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Buscar muebles...">
+                <button id="search-btn" class="btn btn--secondary">Buscar</button>
+            </div>
+        </section>
+
+        <section class="catalogo__productos">
+            <div id="catalogo-grid" class="grid-container">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__info">
+            <p>&copy; 2026 Mueblería Hermanos Jota. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>

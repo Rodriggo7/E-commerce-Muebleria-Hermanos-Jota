@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Hermanos Jota</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="index.html">
+                <img src="assets/logo.svg" alt="Logo Hermanos Jota" class="logo-img">
+            </a>
+        </div>
+        <nav class="header__nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Catálogo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header__cart">
+            <span class="cart-icon">🛒</span>
+            <span id="cart-counter" class="cart-counter">0</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero__content">
+                <h2>Diseño y confort para tu hogar</h2>
+                <p>Encuentra los mejores muebles fabricados con materiales de alta calidad.</p>
+                <a href="productos.html" class="btn btn--primary">Ver Catálogo</a>
+            </div>
+        </section>
+
+        <section class="destacados">
+            <h3>Productos Destacados</h3>
+            <div id="destacados-grid" class="grid-container">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__info">
+            <p>&copy; 2026 Mueblería Hermanos Jota. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>
